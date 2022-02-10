@@ -1,0 +1,54 @@
+package com.cmc.credagility.core.domain.metadata;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+
+import com.cmc.credagility.core.domain.base.BaseEntity;
+
+
+/**
+ * TODO: DOCUMENT ME!
+ *
+ * @author   <a href="mailto:pan.kang@ozstrategy.com">Pan Kang</a>
+ * @version  10/15/2014 12:32
+ */
+@MappedSuperclass public abstract class MetaDataValueString extends BaseEntity implements Serializable {
+  //~ Static fields/initializers ---------------------------------------------------------------------------------------
+
+  /** Use serialVersionUID for interoperability. */
+  private static final long serialVersionUID = 9188868500282865479L;
+
+  //~ Instance fields --------------------------------------------------------------------------------------------------
+
+  /** TODO: DOCUMENT ME! */
+  @Column(
+    name     = "value",
+    length   = 2048,
+    nullable = true
+  )
+  public String value;
+
+  //~ Methods ----------------------------------------------------------------------------------------------------------
+
+  /**
+   * getter method for value.
+   *
+   * @return  String
+   */
+  public String getValue() {
+    return value;
+  }
+
+  //~ ------------------------------------------------------------------------------------------------------------------
+
+  /**
+   * setter method for value.
+   *
+   * @param  value  String
+   */
+  public void setValue(String value) {
+    this.value = value;
+  }
+} // end class ResponsibleMetaDataValueString
