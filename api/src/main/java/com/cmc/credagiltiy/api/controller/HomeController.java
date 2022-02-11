@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping("/api")
 public class HomeController {
 
-    private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+    private final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
     @Autowired
     private DemoRepository demoRepository;
