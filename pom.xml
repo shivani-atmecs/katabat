@@ -318,10 +318,9 @@
     <module>flex-model</module>
     <module>flex-core</module>
     <module>flex-core-util</module>
-    <module>flex-service</module>
-    <module>flex-pay</module>
     <module>oz-expressionService</module>
     <module>oz-el</module>
+    <module>api</module>
   </modules>
 
 </project>
