@@ -1,0 +1,51 @@
+package com.cmc.credagiltiy.api.controller;
+
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.cmc.credagility.core.domain.account.Account;
+import com.cmc.credagiltiy.api.repository.PortfolioRepository;
+import com.cmc.credagiltiy.api.repository.StrategyMasterBatchRepository;
+import com.ozstrategy.credagility.core.domain.QueueAction;
+
+@RestController
+@RequestMapping("/api")
+public class PortfolioQueueManagerController<PortfolioQueueNode> {
+	
+	private final Logger logger = LoggerFactory.getLogger(PortfolioQueueManagerController.class);
+	
+	@Autowired
+	private PortfolioRepository portfolioRepository;
+	
+	@Autowired
+	private StrategyMasterBatchRepository strategyMasterBatchRepository;
+	
+	@GetMapping("/portfolio")
+	public List<Long> index() {
+		
+		List<Long> scheduleIds = strategyMasterBatchRepository.getActiveQueueScheduleIds();
+		
+		logger.info("scheduleIds: {}", scheduleIds);
+		 
+		
+//		 Map<PortfolioQueueNode, List<QueueAction>> allQueues = portfolioRepository.getActiveAgentTreeQueuesByPortfolioIds(
+//			        longIds, portfolioIds);
+		 
+		List<Long> allQueues = portfolioRepository.getActiveAgentTreeQueuesByPortfolioIds();
+
+        
+        logger.info("allQueues: {}", allQueues.size());
+        return allQueues;
+    } 
+	
+
+}

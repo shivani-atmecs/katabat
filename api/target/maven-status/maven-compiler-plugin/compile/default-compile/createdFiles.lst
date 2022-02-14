@@ -1,0 +1,8 @@
+com\cmc\credagiltiy\api\controller\PortfolioQueueManagerController.class
+com\cmc\credagiltiy\api\controller\HomeController.class
+com\cmc\credagiltiy\api\repository\StrategyMasterBatchRepository.class
+com\cmc\credagiltiy\api\ApiApplication.class
+com\cmc\credagiltiy\api\configuration\JpaConfig.class
+com\cmc\credagiltiy\api\repository\DemoRepository.class
+com\cmc\credagiltiy\api\configuration\AppConfig.class
+com\cmc\credagiltiy\api\repository\PortfolioRepository.class
